@@ -9,6 +9,9 @@ export class AuthService {
 
   constructor(private afauth: AngularFireAuth) { }
 
+  //Metodo para registrarse con email y contraseña
+  //Denis Rodriguez
+  //07/06/2022
   async register(email:string, password:string){
     try{
       return await this.afauth.createUserWithEmailAndPassword(email, password);
@@ -19,6 +22,9 @@ export class AuthService {
     }
   }
 
+  //Metodo para iniciar sesion con email y contraseña
+  //Denis Rodriguez
+  //07/06/2022
   async login(email:string, password:string){
     try{
       return await this.afauth.signInWithEmailAndPassword(email, password);
@@ -29,6 +35,9 @@ export class AuthService {
     }
   }
 
+  //Metodo para iniciar sesion con cuenta de google
+  //Denis Rodriguez
+  //07/06/2022
   async loginWithGoogle(email:string, password:string){
     try{
       return await this.afauth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
@@ -39,10 +48,16 @@ export class AuthService {
     }
   }
 
+  //Metodo para mostrar cual es el usuario que se encuentra logeado
+  //Denis Rodriguez
+  //07/06/2022
   getUserLogged(){
     return this.afauth.authState;
   }
 
+  //Metodo para cerrar sesion
+  //Denis Rodriguez
+  //07/06/2022
   logout(){
     this.afauth.signOut();
   }

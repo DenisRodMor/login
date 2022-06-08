@@ -17,6 +17,10 @@ export class RegisterComponent implements OnInit {
 
     }
 
+
+  //Metodo para registrarse en el sistema
+  //Denis Rodriguez
+  //07/06/2022
     registrarse(){
       console.log(this.usuario);
       const {email,password}=this.usuario;

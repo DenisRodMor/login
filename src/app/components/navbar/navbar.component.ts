@@ -8,6 +8,7 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class NavbarComponent implements OnInit {
 
+
   userLogged=this.authService.getUserLogged();
 
   constructor(private authService:AuthService) { }
@@ -15,6 +16,10 @@ export class NavbarComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
+  //Metodo para cerrar sesion en el sistema
+  //Denis Rodriguez
+  //07/06/2022
   logout(){
     this.authService.logout();
   }
